@@ -26,7 +26,7 @@ const SITE_SKIP_NAV_ID = "reach-skip-nav"
 const SITE_TITLE = "Michael Edelman"
 const SITE_URL = "https://edel.mn"
 
-exports.schemaOrg = {
+const schemaOrg = {
   "@context": "http://schema.org",
   "@type": "WebPage",
   author: {
