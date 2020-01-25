@@ -1,0 +1,26 @@
+[
+  {
+    "id": "page",
+    "name": "Page",
+    "repeatable": true,
+    "value": "page.json"
+  },
+  {
+    "id": "post",
+    "name": "Post",
+    "repeatable": true,
+    "value": "post.json"
+  },
+  {
+    "id": "project",
+    "name": "Project",
+    "repeatable": true,
+    "value": "project.json"
+  },
+  {
+    "id": "person",
+    "name": "Person",
+    "repeatable": false,
+    "value": "person.json"
+  }
+]

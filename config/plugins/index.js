@@ -29,7 +29,7 @@ exports.createPluginConfig = function createPluginConfig(config) {
         trackingId: config.google,
       },
     },
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     getManifestConfig(config),
     `gatsby-plugin-offline`,
   ]
