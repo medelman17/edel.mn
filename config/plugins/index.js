@@ -1,5 +1,6 @@
 const { getPrismicSourceConfig } = require("./prismic")
 const { getManifestConfig } = require("./manifest")
+const { getWebmentionConfig } = require("./webmention")
 
 exports.createPluginConfig = function createPluginConfig(config) {
   return [
@@ -29,6 +30,7 @@ exports.createPluginConfig = function createPluginConfig(config) {
         trackingId: config.google,
       },
     },
+    getWebmentionConfig(config),
     `gatsby-plugin-advanced-sitemap`,
     getManifestConfig(config),
     `gatsby-plugin-offline`,
