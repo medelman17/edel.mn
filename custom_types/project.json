@@ -1,0 +1,62 @@
+{
+  "Main": {
+    "project_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "project title"
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "project uid"
+      }
+    },
+    "project_category": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading5",
+        "label": "project category"
+      }
+    },
+    "project_preview_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em, hyperlink",
+        "allowTargetBlank": true,
+        "label": "project preview description"
+      }
+    },
+    "project_preview_thumbnail": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "project preview thumbnail"
+      }
+    },
+    "project_hero_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "project hero image"
+      }
+    },
+    "project_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "project description"
+      }
+    },
+    "project_post_date": {
+      "type": "Date",
+      "config": {
+        "label": "project post date"
+      }
+    }
+  }
+}

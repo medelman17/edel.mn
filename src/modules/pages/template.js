@@ -10,6 +10,7 @@ const PageStrategy = {
   about: AboutPageContainer,
   projects: ProjectsPageContainer,
   blog: BlogPageContainer,
+  home: () => null,
 }
 
 function PageTemplate(props) {

@@ -12,6 +12,10 @@ export const globalCss = css`
     src: url("../../static/fonts/jbmono/JetBrainsMono-Regular.ttf")
       format("ttf");
   }
+  html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+  }
   body {
     margin: 0;
   }
