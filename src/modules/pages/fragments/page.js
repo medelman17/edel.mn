@@ -6,12 +6,34 @@ export const query = graphql`
       id
       uid
     }
-
     description
     meta_description
     meta_title
+    body {
+      ... on PRISMIC_PageBodyForm {
+        type
+        label
+        primary {
+          name
+          endpoint
+          success_msg
+          instructions
+          form_title
+          fail_msg
+          can_reset
+        }
+        fields {
+          field_label
+          field_name
+          field_type
+          required
+          error_message
+          options
+        }
+      }
+    }
     page_content {
-      ... on PRISMIC_PagePage_contentText_section {
+      ... on PRISMIC_PagePage_contentText_section2 {
         type
         label
         primary {
