@@ -1,7 +1,9 @@
 exports.getPageVariants = function getPageVariants(props) {
   return {
     container: {},
-    hero: {},
+    hero: {
+      // maxWidth: [null, null, "85%"],
+    },
     heading: {
       one: {},
     },

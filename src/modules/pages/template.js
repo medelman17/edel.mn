@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+// /** @jsx jsx */
+// import { jsx } from "theme-ui"
 import { AboutPageContainer } from "./about"
 import { ProjectsPageContainer } from "./projects"
 import { ContactPageContainer } from "./contact"

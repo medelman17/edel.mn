@@ -1,11 +1,12 @@
-export function getFormVariants(props) {
+exports.getFormVariants = function getFormVariants(props) {
   return {
     layout: {
       container: {
         display: "flex",
         flexDirection: "column",
         my: 4,
-        width: "100%",
+        width: ["100%", "100%", "75%"],
+        boxShadow: "rgba(15, 17, 21, 0.35) 0px 6px 9px 0px",
         backgroundColor: "surface",
         padding: [".5rem", "2em"],
         borderRadius: "8px",
@@ -65,6 +66,20 @@ export function getFormVariants(props) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        "& > select": {
+          color: "text",
+          bg: "surface",
+          paddingLeft: [".25rem", ".875rem"],
+          maxWidth: [null, "75%", "100%"],
+          paddingTop: ".5rem",
+          paddingBottom: ".5rem",
+          border: "0.07rem solid",
+          borderColor: "link",
+          marginTop: 1,
+          "::focus": {
+            outline: "none",
+          },
+        },
         "& > input:hover": {},
         "&  > input:focus": {
           outline: "none",
@@ -85,14 +100,14 @@ export function getFormVariants(props) {
         message: {},
       },
       type: {
-        text: {
+        email: {
           width: "100%",
           height: "1.5rem",
           lineHeight: "150%",
           paddingLeft: [".25rem", ".875rem"],
           paddingTop: ".5rem",
           paddingBottom: ".5rem",
-          maxWidth: [null, "75%", "50%"],
+          maxWidth: [null, "75%", "100%"],
           backgroundColor: "surface",
           color: "text",
           border: "none",
@@ -102,26 +117,29 @@ export function getFormVariants(props) {
             outline: "none",
           },
         },
-        select: {
-          picker: {
-            color: "text",
-            bg: "surface",
-            paddingLeft: [".25rem", ".875rem"],
-            paddingTop: ".5rem",
-            paddingBottom: ".5rem",
-            border: "0.07rem solid",
-            borderColor: "link",
-            marginTop: 1,
-            "::focus": {
-              outline: "none",
-            },
+        text: {
+          width: "100%",
+          height: "1.5rem",
+          lineHeight: "150%",
+          paddingLeft: [".25rem", ".875rem"],
+          paddingTop: ".5rem",
+          paddingBottom: ".5rem",
+          maxWidth: [null, "75%", "100%"],
+          backgroundColor: "surface",
+          color: "text",
+          border: "none",
+          borderBottom: "0.07rem solid",
+          borderBottomColor: "link",
+          "::focus": {
+            outline: "none",
           },
-          option: {},
         },
+        select: {},
         textarea: {
           color: "text",
           bg: "surface",
           paddingLeft: [".25rem", ".875rem"],
+          maxWidth: [null, "75%", "100%"],
           border: "0.07rem solid",
           borderColor: "link",
           borderRadius: "8px",
