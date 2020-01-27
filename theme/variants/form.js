@@ -4,11 +4,12 @@ exports.getFormVariants = function getFormVariants(props) {
       container: {
         display: "flex",
         flexDirection: "column",
-        my: 4,
-        width: ["100%", "100%", "75%"],
-        boxShadow: "rgba(15, 17, 21, 0.35) 0px 6px 9px 0px",
-        backgroundColor: "surface",
-        padding: [".5rem", "2em"],
+        my: 0,
+        width: ["100%", "100%", "66%"],
+        // boxShadow: "rgba(15, 17, 21, 0.35) 0px 3px 6px 0px",
+        // backgroundColor: "surface",
+        // padding: ["2rem 1.15rem", "3rem 6rem"],
+
         borderRadius: "8px",
         overflow: "hidden",
         transition:
@@ -68,7 +69,7 @@ exports.getFormVariants = function getFormVariants(props) {
         justifyContent: "center",
         "& > select": {
           color: "text",
-          bg: "surface",
+          bg: "background",
           paddingLeft: [".25rem", ".875rem"],
           maxWidth: [null, "75%", "100%"],
           paddingTop: ".5rem",
@@ -108,7 +109,7 @@ exports.getFormVariants = function getFormVariants(props) {
           paddingTop: ".5rem",
           paddingBottom: ".5rem",
           maxWidth: [null, "75%", "100%"],
-          backgroundColor: "surface",
+          backgroundColor: "background",
           color: "text",
           border: "none",
           borderBottom: "0.07rem solid",
@@ -125,7 +126,7 @@ exports.getFormVariants = function getFormVariants(props) {
           paddingTop: ".5rem",
           paddingBottom: ".5rem",
           maxWidth: [null, "75%", "100%"],
-          backgroundColor: "surface",
+          backgroundColor: "background",
           color: "text",
           border: "none",
           borderBottom: "0.07rem solid",
@@ -137,7 +138,7 @@ exports.getFormVariants = function getFormVariants(props) {
         select: {},
         textarea: {
           color: "text",
-          bg: "surface",
+          bg: "background",
           paddingLeft: [".25rem", ".875rem"],
           maxWidth: [null, "75%", "100%"],
           border: "0.07rem solid",

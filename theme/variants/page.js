@@ -15,11 +15,18 @@ exports.getPageVariants = function getPageVariants(props) {
     },
     body: {
       paper: {
+        "& p": {
+          px: 4,
+        },
+        "& h1": {
+          px: 4,
+          mx: 0,
+        },
         display: "flex",
         flexDirection: "column",
         width: "100%",
         height: "auto",
-        boxShadow: "rgba(15, 17, 21, 0.35) 0px 6px 9px 0px",
+        boxShadow: "rgba(15, 17, 21, 0.35) 0px 3px 6px 0px",
         borderRadius: "8px",
         padding: [".5rem", 0],
         bg: "surface",
@@ -31,7 +38,7 @@ exports.getPageVariants = function getPageVariants(props) {
         px: 1,
       },
       default: {
-        px: 2,
+        px: 0,
       },
     },
   }

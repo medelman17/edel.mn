@@ -17,7 +17,7 @@ export function PostView(props) {
   }, [])
 
   const body = props.post.body.map(transformSlice)
-  console.log(props)
+
   return (
     <article ref={ref}>
       <div
@@ -26,14 +26,28 @@ export function PostView(props) {
         <ImageFactory
           image={props.post.main_imageSharp.childImageSharp.fluid}
         />
-        <h1 sx={{ variant: "text.h1", marginTop: 4, marginLeft: [0, 2] }}>
+      </div>
+      <div>
+        <h1
+          sx={{
+            variant: "text.h1",
+            marginTop: 4,
+            // marginLeft: [0, 2],
+            // fontSize: "36px",
+            // lineHeight: "48px",
+          }}
+        >
           {props.post.title[0].text}
         </h1>
+
         <div
           sx={{
             variant: width > 500 ? "page.body.default" : "",
           }}
         >
+          <p sx={{ fontWeight: 500, fontSize: "14px", my: 1 }}>
+            <i>Michael Edelman</i>
+          </p>
           {body}
         </div>
       </div>

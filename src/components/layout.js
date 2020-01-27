@@ -13,6 +13,7 @@ export function Layout(props) {
   const { data, children } = props
   const { title } = data.site.siteMetadata
   const [_, pages] = hasPrismicData(props, "allPages.edges")
+  // console.log(title)
   return (
     <div ref={ref} sx={{ variant: "layout.container" }}>
       <GlobalCss />

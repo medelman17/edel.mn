@@ -7,11 +7,31 @@ export function ContactPageView({ page }) {
   const [description] = page.description || { text: "No description" }
   return (
     <div sx={{ variant: "page.container" }}>
-      <div sx={{ variant: "page.hero" }}>
-        <h1 sx={{ variant: "page.heading.one" }}>{title.text}</h1>
-        <p sx={{ variant: "page.description" }}>{description.text}</p>
+      <div
+        sx={{
+          variant: "page.hero",
+          paddingTop: ["1rem", "3rem"],
+          paddingBottom: ["3rem", "5rem"],
+        }}
+      >
+        <h1 sx={{ variant: "page.heading.one", fontSize: "64px" }}>
+          {title.text}
+        </h1>
+        <p
+          sx={{
+            variant: "page.description",
+            fontSize: "24px",
+            lineHeight: "30px",
+          }}
+        >
+          {description.text}
+        </p>
       </div>
-      <div sx={{ variant: "page.body" }}>
+      <div
+        sx={{
+          variant: "page.body",
+        }}
+      >
         {renderPageBodyComponents(page.body)}
       </div>
     </div>
