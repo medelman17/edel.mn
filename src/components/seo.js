@@ -4,11 +4,12 @@ import Helmet from "react-helmet"
 export function SEO(props) {
   const { lang, title } = props
   const meta = getSiteMetaTags(props)
+  console.log(props)
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
-      titleTemplate={`%s | ${title}`}
+      // titleTemplate={`%s | ${title}`}
       meta={meta}
     />
   )
