@@ -1,11 +1,18 @@
 exports.getMessyVariants = function getMessyVariants(props) {
   return {
+    image: {
+      avatar: {
+        width: [100, 100],
+        height: [100, 100],
+        borderRadius: 999999,
+        boxShadow: "rgba(15, 17, 21, 0.35) 0px 3px 6px 0px",
+      },
+    },
     links: {
       navigation: {
         fontFamily: "body",
-        lineHeight: ["body", "heading"],
         fontWeight: "heading",
-        fontSize: [1, 2],
+        lineHeight: 1.5,
         color: "text",
         paddingRight: 3,
         "&:last-child": {
@@ -35,7 +42,7 @@ exports.getMessyVariants = function getMessyVariants(props) {
       height: "auto",
       boxShadow: "rgba(15, 17, 21, 0.35) 0px 6px 9px 0px",
       borderRadius: "8px",
-      padding: [".5rem", "2em"],
+      // padding: [".5rem", "2em"],
       bg: "surface",
       overflow: "hidden",
       transition:

@@ -4,7 +4,7 @@ exports.getLayoutVariants = function getLayoutVariants({ maxWidth = "800px" }) {
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh",
-      px: [".75rem", ".75rem", "0"],
+      // px: [".75rem", ".75rem", "0"],
       fontFamily: "body",
       bg: "background",
       transition:
@@ -29,24 +29,27 @@ exports.getLayoutVariants = function getLayoutVariants({ maxWidth = "800px" }) {
     header: {
       outer: {
         fontFamily: "heading",
-        lineHeight: "heading",
+        lineHeight: 1.5,
         fontWeight: "heading",
         bg: "background",
         alignItems: "center",
+        marginTop: "1.4rem",
+        marginBottom: ".6rem",
         justifyContent: "center",
+        px: [2, 2, 0],
         transition:
           "box-shadow 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;",
       },
       navigation: {
         display: "flex",
-        alignItems: "center",
+        // alignItems: "center",
 
         maxWidth,
-        py: 4,
       },
       inner: {
         display: "flex",
         alignItems: "center",
+
         width: "100%",
         maxWidth,
       },
@@ -57,14 +60,14 @@ exports.getLayoutVariants = function getLayoutVariants({ maxWidth = "800px" }) {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        bg: "background",
-        marginTop: 4,
+
         transition:
           "box-shadow 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;",
       },
       inner: {
         width: "100%",
         maxWidth,
+        minHeight: "10rem",
       },
     },
   }

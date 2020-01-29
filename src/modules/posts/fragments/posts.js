@@ -13,10 +13,19 @@ export const query = graphql`
           lang
           type
         }
+        author {
+          ... on PRISMIC_Person {
+            name
+            display_name
+            pic
+            location
+          }
+        }
         main_imageSharp {
           childImageSharp {
-            fluid(maxWidth: 800, maxHeight: 300) {
+            fluid(maxWidth: 400, maxHeight: 400) {
               ...GatsbyImageSharpFluid
+              presentationWidth
             }
           }
         }

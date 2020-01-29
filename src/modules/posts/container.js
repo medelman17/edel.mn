@@ -1,7 +1,14 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, ThemeProvider } from "theme-ui"
 import { PostView } from "./view"
+import { createModuleTheme } from "./theme"
 
 export function PostContainer(props) {
-  return <PostView {...props} />
+  const { width } = props
+  const createTheme = createModuleTheme({ isMobile: width < 500 })
+  return (
+    <ThemeProvider theme={createTheme}>
+      <PostView {...props} />
+    </ThemeProvider>
+  )
 }

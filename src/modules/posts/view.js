@@ -2,54 +2,47 @@
 import { jsx } from "theme-ui"
 import { useEffect } from "react"
 import { RichText } from "prismic-reactjs"
-import { EmbedFactory, ImageFactory } from "../../components"
+import { EmbedFactory, ImageFactory, CardFactory } from "../../components"
+import { Card } from "../../components/card/index"
 import { linkResolver } from "../../utils"
 import { htmlSerializer, getCodeSerializer } from "./serializers"
 import Prism from "prismjs"
-import useDimensions from "react-use-dimensions"
 
 import "./prism/prism.css"
 
+function PostHeader(props) {
+  const [{ text }] = props.post.title
+  return (
+    <div sx={{ variant: "layout.header" }}>
+      <h1 sx={{ variant: "styles.h1" }}>{text}</h1>
+
+      <ImageFactory
+        image={props.post.main_imageSharp.childImageSharp.fluid}
+        variant="image.main"
+      />
+    </div>
+  )
+}
+
 export function PostView(props) {
-  const [ref, { width }] = useDimensions({ liveMeasure: false })
+  const {
+    post,
+    post: { author, body },
+    width,
+  } = props
   useEffect(() => {
     Prism.highlightAll()
   }, [])
 
-  const body = props.post.body.map(transformSlice)
-
   return (
-    <article ref={ref}>
-      <div
-        sx={{ variant: width > 500 ? "page.body.paper" : "page.body.mobile" }}
-      >
-        <ImageFactory
-          image={props.post.main_imageSharp.childImageSharp.fluid}
-        />
-      </div>
-      <div>
-        <h1
-          sx={{
-            variant: "text.h1",
-            marginTop: 4,
-            // marginLeft: [0, 2],
-            // fontSize: "36px",
-            // lineHeight: "48px",
-          }}
-        >
-          {props.post.title[0].text}
-        </h1>
-
-        <div
-          sx={{
-            variant: width > 500 ? "page.body.default" : "",
-          }}
-        >
-          <p sx={{ fontWeight: 500, fontSize: "14px", my: 1 }}>
-            <i>Michael Edelman</i>
-          </p>
-          {body}
-        </div>
+    <article
+      id="article"
+      sx={{ variant: "layout.container", marginBottom: "10rem" }}
+    >
+      <PostHeader post={post} width={width} />
+      <div sx={{ variant: "layout.body" }}>{body.map(transformSlice)}</div>
+      <div sx={{ variant: "layout.footer" }}>
+        <Card type="author" el={2} data={author} bg="surface" />
       </div>
     </article>
   )
@@ -86,15 +79,13 @@ const sliceTransformStrategy = {
         image={slice.primary.imageSharp.childImageSharp.fluid}
       />
     )
-    console.log("image slice,", slice)
+    // console.log("image slice,", slice)
   },
 }
 
 function transformSlice({ type, ...slice }, index) {
-  // console.log(type)
-
   return (
-    <div sx={{ variant: "slice.divider", my: 3 }}>
+    <div sx={{ variant: "slice.divider" }}>
       {sliceTransformStrategy[type]({ slice, index })}
     </div>
   )

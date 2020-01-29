@@ -5,12 +5,13 @@ import { BlogPostList } from "./components"
 export function BlogPageView({ posts, page, site }) {
   const [title] = page.title || "No title"
   const [description] = page.description || { text: "No description" }
+
   return (
-    <div sx={{ variant: "page.container" }}>
+    <div sx={{ variant: "page.container", px: [2, 0] }}>
       <div
         sx={{
           variant: "page.hero",
-          // maxWidth: [null, null, "66%"],
+          maxWidth: [null, null, "800px"],
           paddingTop: ["1rem", "3rem"],
           paddingBottom: ["3rem", "5rem"],
         }}
@@ -28,7 +29,6 @@ export function BlogPageView({ posts, page, site }) {
           {description.text}
         </p>
       </div>
-
       <div sx={{ variant: "page.body.default" }}>
         <BlogPostList posts={posts} />
       </div>

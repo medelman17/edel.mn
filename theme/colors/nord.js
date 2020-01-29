@@ -5,11 +5,18 @@ const nordLight = {
   subdued: "rgb(123, 136, 161)",
   accent: "rgb(236, 239, 244)",
   link: "rgb(94, 129, 172)",
-  red: "#BF616A",
-  orange: "#D08770",
-  yellow: "#EBCB8B",
-  green: "#A3BE8C",
-  pink: "#B48EAD",
+  error: "#BF616A",
+  warning: "#EBCB8B",
+  advanced: "#D08770",
+  success: "#A3BE8C",
+  uncommon: "#B48EAD",
+  nord7: "#8FBCBB",
+  nord8: "#88C0D0",
+  nord9: "#81A1C1",
+  nord10: "#5E81AC",
+  link: {
+    active: "#88C0D0",
+  },
 }
 
 const nordDark = {
@@ -19,11 +26,18 @@ const nordDark = {
   subdued: "rgb(171, 185, 207)",
   accent: "rgb(59,66,82)",
   link: "rgb(136, 192, 208)",
-  red: "#BF616A",
-  orange: "#D08770",
-  yellow: "#EBCB8B",
-  green: "#A3BE8C",
-  pink: "#B48EAD",
+  error: "#BF616A",
+  warning: "#EBCB8B",
+  advanced: "#D08770",
+  success: "#A3BE8C",
+  uncommon: "#B48EAD",
+  nord7: "#8FBCBB",
+  nord8: "#88C0D0",
+  nord9: "#81A1C1",
+  nord10: "#5E81AC",
+  link: {
+    active: "#88C0D0",
+  },
 }
 
 module.exports = {

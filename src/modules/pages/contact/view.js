@@ -6,12 +6,13 @@ export function ContactPageView({ page }) {
   const [title] = page.title || "No title"
   const [description] = page.description || { text: "No description" }
   return (
-    <div sx={{ variant: "page.container" }}>
+    <div sx={{ variant: "page.container", px: [2, 0], maxWidth: "800px" }}>
       <div
         sx={{
           variant: "page.hero",
           paddingTop: ["1rem", "3rem"],
           paddingBottom: ["3rem", "5rem"],
+          maxWidth: [null, null, "66%"],
         }}
       >
         <h1 sx={{ variant: "page.heading.one", fontSize: "64px" }}>

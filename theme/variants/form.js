@@ -36,24 +36,34 @@ exports.getFormVariants = function getFormVariants(props) {
     },
     control: {
       submit: {
-        border: ".07rem solid",
-
-        borderColor: "background",
-        borderRadius: "8px",
-        bg: "surface",
-        padding: "5px 20px",
-        "&:disabled": {
+        active: {
+          color: "success",
+          border: ".07rem solid",
+          borderColor: "success",
+          borderRadius: "8px",
           bg: "background",
+          padding: "5px 20px",
+          "::focus": {
+            outline: "none",
+          },
         },
-        "::focus": {
-          outline: "none",
+        disabled: {
+          color: "error",
+          border: ".07rem solid",
+          borderColor: "error",
+          borderRadius: "8px",
+          bg: "background",
+          padding: "5px 20px",
+          "::focus": {
+            outline: "none",
+          },
         },
       },
       reset: {
         border: ".07rem solid",
         borderColor: "text",
         borderRadius: "8px",
-        bg: "surface",
+        bg: "background",
         padding: "5px 20px",
         marginLeft: "5px",
         color: "text",
@@ -96,7 +106,7 @@ exports.getFormVariants = function getFormVariants(props) {
         container: {
           minHeight: "1.5em",
           fontSize: 1,
-          color: "red",
+          color: "error",
         },
         message: {},
       },

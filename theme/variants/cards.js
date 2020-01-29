@@ -25,6 +25,11 @@ exports.getCardVariants = function getCardVariants() {
           "box-shadow 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;",
       },
     },
+    author: {
+      overflow: "hidden",
+      borderRadius: "0.5em",
+      boxShadow: "rgba(15, 17, 21, 0.2) 0px 3px 6px 0px",
+    },
     medium: {
       overflow: "hidden",
       borderRadius: "0.5em",

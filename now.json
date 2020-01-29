@@ -1,15 +1,17 @@
 {
   "name": "edel.mn",
   "version": 2,
-  "alias": ["edel.mn"],
+
   "env": {
     "PRISMIC_ACCESS_TOKEN": "@prismic_access_token",
-    "WEBMENTIONS_TOKEN": "@webmentions_token"
+    "WEBMENTIONS_TOKEN": "@webmentions_token",
+    "SENTRY_DSN": "@sentry_dsn"
   },
   "build": {
     "env": {
       "PRISMIC_ACCESS_TOKEN": "@prismic_access_token",
-      "WEBMENTIONS_TOKEN": "@webmentions_token"
+      "WEBMENTIONS_TOKEN": "@webmentions_token",
+      "SENTRY_DSN": "@sentry_dsn"
     }
   }
 }

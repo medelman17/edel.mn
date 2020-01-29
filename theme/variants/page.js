@@ -1,6 +1,12 @@
 exports.getPageVariants = function getPageVariants(props) {
   return {
-    container: {},
+    container: {
+      // minHeight: "100vh",
+      // display: "flex",
+      // flexDirection: "column",
+      // alignContent: "center",
+      // alignItems: "center",
+    },
     hero: {
       // maxWidth: [null, null, "85%"],
     },
@@ -11,7 +17,7 @@ exports.getPageVariants = function getPageVariants(props) {
     "section-divider": {
       borderColor: "subdued",
       border: "1px solid",
-      my: 2,
+      // my: 2,
     },
     body: {
       paper: {
@@ -20,7 +26,7 @@ exports.getPageVariants = function getPageVariants(props) {
         },
         "& h1": {
           px: 4,
-          mx: 0,
+          // mx: 0,
         },
         display: "flex",
         flexDirection: "column",
@@ -28,7 +34,7 @@ exports.getPageVariants = function getPageVariants(props) {
         height: "auto",
         boxShadow: "rgba(15, 17, 21, 0.35) 0px 3px 6px 0px",
         borderRadius: "8px",
-        padding: [".5rem", 0],
+        // padding: [".5rem", 0],
         bg: "surface",
         overflow: "hidden",
         transition:

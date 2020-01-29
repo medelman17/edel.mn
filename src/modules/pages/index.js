@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import React from "react"
 import { graphql } from "gatsby"
 import PageTemplate from "./template"
 import { Layout, SEO } from "./layout"
@@ -17,11 +18,15 @@ export const query = graphql`
       page(uid: $uid, lang: "en-us") {
         ...SinglePage
       }
+      person(lang: "en-us", uid: "michael") {
+        ...PostAuthor
+      }
     }
   }
 `
 export default props => {
   const [hasPage, page] = hasPrismicData(props, "page")
+  const [hasAuthor, author] = hasPrismicData(props, "person")
   const [hasSite, site] = hasGatsbyData(props, "site")
   if (isBrowser() && !hasPage) {
     const { navigate } = require("gatsby")
@@ -30,22 +35,35 @@ export default props => {
     return null
   } else {
     return (
-      <Layout>
-        <SEO {...getPageSEOProps(site, page)} />
-        <PageTemplate page={page} site={site} type={page._meta.uid} />
-      </Layout>
+      <>
+        <SEO {...getPageSEOProps({ site, page, author })} />
+        <PageTemplate
+          {...props}
+          page={page}
+          site={site}
+          author={author}
+          type={page._meta.uid}
+        />
+      </>
     )
   }
 }
 
-function getPageSEOProps(site, page) {
+function getPageSEOProps({ site, page, author }) {
   const title = getPageTitle(site, page)
   const { description, ogLanguage: lang, twitter } = site.siteMetadata
+
   return {
     description,
     lang,
     title,
     twitter,
+    author,
+    type: "page",
+    page: {
+      ...page,
+    },
+    site,
   }
 }
 

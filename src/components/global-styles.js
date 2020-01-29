@@ -12,12 +12,16 @@ export const globalCss = css`
     src: url("../../static/fonts/jbmono/JetBrainsMono-Regular.ttf")
       format("ttf");
   }
-  html {
-    margin-left: calc(100vw - 100%);
-    margin-right: 0;
+
+  :root {
+    --vertical-rhythm: 3rem;
   }
-  body {
-    margin: 0;
+
+  html {
+    /* margin-left: calc(100vw - 100%);
+    margin-right: 0; */
+    font-size: 16px;
+    line-height: 1.5;
   }
 `
 
@@ -54,13 +58,25 @@ export const cssReset = css`
   }
 
   /* Set core body defaults */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  } */
+
   body {
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
   }
-
   /* Remove list styles on ul, ol elements with a class attribute */
   ul[class],
   ol[class] {
@@ -87,17 +103,81 @@ export const cssReset = css`
     display: block;
   }
 
-  /* Natural flow and rhythm in articles by default */
-  article > * + * {
-    margin-top: 1em;
-  }
-
   /* Inherit fonts for inputs and buttons */
   input,
   button,
   textarea,
   select {
     font: inherit;
+  }
+
+  p,
+  ul,
+  ol,
+  pre,
+  table,
+  blockquote {
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+  }
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+
+  /* Let's make sure all's aligned */
+  hr,
+  .hr {
+    border: 1px solid;
+    margin: -1px 0;
+  }
+  a,
+  b,
+  i,
+  strong,
+  em,
+  small,
+  code {
+    line-height: 0;
+  }
+  sub,
+  sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  body,
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  form,
+  fieldset,
+  p,
+  blockquote,
+  th,
+  td {
+    margin: 0;
+    padding: 0;
   }
 
   /* Remove all animations and transitions for people that prefer not to see them */

@@ -9,7 +9,7 @@ const fonts = {
 const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 96]
 
 const fontWeights = {
-  body: 400,
+  body: 500,
   heading: 700,
   bold: 700,
 }

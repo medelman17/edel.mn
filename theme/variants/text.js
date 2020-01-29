@@ -6,6 +6,7 @@ exports.getTextVariants = function getTextVariants(colors) {
       fontWeight: "body",
       lineHeight: "body",
       fontSize: [1, 2],
+      marginBottom: 3,
     },
     lede: {
       color: "text",
@@ -27,6 +28,8 @@ exports.getTextVariants = function getTextVariants(colors) {
       fontWeight: "heading",
       lineHeight: "heading",
       fontSize: [3, 4],
+      lineHeight: 1.2,
+      marginBottom: 3,
     },
     h3: {
       color: "text",

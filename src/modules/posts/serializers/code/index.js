@@ -24,6 +24,6 @@ function jsxSerializer(type, element, content, children, index) {
 }
 
 function codeSerializer(type, element, content, children, index) {
-  console.log(type, element, content)
+  // console.log(type, element, content)
   return null
 }

@@ -76,7 +76,11 @@ function FormFooter({ isValid, isSubmitting, can_reset }) {
       <div sx={{ variant: "form.control.group" }}>
         <button
           type="submit"
-          sx={{ variant: "form.control.submit" }}
+          sx={{
+            variant: isValid
+              ? "form.control.submit.active"
+              : "form.control.submit.disabled",
+          }}
           disabled={!isValid}
         >
           Submit

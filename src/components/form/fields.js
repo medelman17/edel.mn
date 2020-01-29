@@ -45,7 +45,12 @@ function FormLabel({ name, label, display = "block", variant = "form.label" }) {
 
 function FormField({ type, isTouched, ...props }) {
   return (
-    <Field sx={{ variant: `form.field.type.${type}` }} type={type} {...props} />
+    <Field
+      id={props.name}
+      sx={{ variant: `form.field.type.${type}` }}
+      type={type}
+      {...props}
+    />
   )
 }
 

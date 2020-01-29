@@ -20,6 +20,7 @@ const SITE_PRISMIC_ACCESS_TOKEN = process.env.PRISMIC_ACCESS_TOKEN
 const SITE_PRISMIC_PREVIEW_ENABLED = false
 const SITE_PRISMIC_PREVIEW_PATH = "/preview"
 const SITE_PRISMIC_REPOSITORY = "edelmn"
+const SITE_SENTRY_DSN = process.env.SENTRY_DSN
 const SITE_SHORT_NAME = "Edelman"
 const SITE_SITEMAP = "https://edel.mn/sitemap.xml"
 const SITE_SKIP_NAV_ID = "reach-skip-nav"
@@ -64,6 +65,7 @@ exports.website = {
   prismicPreviewPath: SITE_PRISMIC_PREVIEW_PATH,
   prismicRepo: SITE_PRISMIC_REPOSITORY,
   schemaOrg,
+  sentryDSN: SITE_SENTRY_DSN,
   shortName: SITE_SHORT_NAME,
   siteUrl: SITE_URL,
   sitemap: SITE_SITEMAP,

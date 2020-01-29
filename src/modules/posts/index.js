@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import React from "react"
 import { graphql } from "gatsby"
 import PostTemplate from "./template"
 import { Layout, SEO } from "./layout"
+import useDimensions from "react-use-dimensions"
 
 import { isBrowser, hasPrismicData, hasGatsbyData } from "../../utils"
 
@@ -24,6 +26,8 @@ export const query = graphql`
 export default props => {
   const [hasPost, post] = hasPrismicData(props, "post")
   const [hasSite, site] = hasGatsbyData(props, "site")
+  const [ref, { width }] = useDimensions({ liveMeasure: false })
+
   if (isBrowser() && !hasPost) {
     const { navigate } = require("gatsby")
     navigate("/")
@@ -31,22 +35,34 @@ export default props => {
     return null
   } else {
     return (
-      <Layout>
-        <SEO {...getPostSEOProps(site, post)} />
-        <PostTemplate post={post} site={site} />
-      </Layout>
+      <div ref={ref}>
+        <SEO {...getPostSEOProps({ site, post })} />
+        <PostTemplate post={post} site={site} width={width} />
+      </div>
     )
   }
 }
 
-function getPostSEOProps(site, post) {
+function getPostSEOProps({ site, post }) {
   const title = getPostTitle(site, post)
   const { description, ogLanguage: lang, twitter } = site.siteMetadata
+  // console.log("post in SEO fn", post)
   return {
     description,
     lang,
     title,
     twitter,
+    type: "post",
+    post: {
+      blurb: post.blurb,
+      title: post.title,
+      date: post.date,
+      author: post.author,
+      mainImage: post.main_image,
+      uid: post._meta.uid,
+      lang: post._meta.lang,
+    },
+    site,
   }
 }
 

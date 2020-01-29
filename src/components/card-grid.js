@@ -4,6 +4,7 @@ import { jsx } from "theme-ui"
 const GridStrategy = {
   default: DefaultCardGrid,
   horizontal: HorizontalCardGrid,
+  listItem: ListItemCardGrid,
 }
 
 export function CardGridFactory({ type, ...props }) {
@@ -20,5 +21,9 @@ function DefaultCardGrid(props) {
 }
 
 function HorizontalCardGrid(props) {
+  return <div sx={{ variant: "cards.grid.horizontal" }}>{props.children}</div>
+}
+
+function ListItemCardGrid(props) {
   return <div sx={{ variant: "cards.grid.horizontal" }}>{props.children}</div>
 }

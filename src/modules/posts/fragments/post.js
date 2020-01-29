@@ -19,6 +19,10 @@ export const query = graphql`
       lang
       type
     }
+    author {
+      ...PostAuthor
+    }
+
     body {
       ... on PRISMIC_PostBodyText {
         type

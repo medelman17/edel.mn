@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import React from "react"
 import { graphql, navigate } from "gatsby"
 import { SEO, Layout } from "../components"
 import { hasPrismicData, hasGatsbyData, getPageSEOProps } from "../utils"
 import { BlogPostList } from "../modules/pages/blog/components"
+import { TransitionState } from "gatsby-plugin-transition-link"
 
 export const query = graphql`
   query HomePageQuery {
@@ -37,7 +39,7 @@ function HomePageView({ page, posts, ...props }) {
   const [title] = page.title || "No title"
   const [description] = page.description || { text: "No description" }
   return (
-    <div sx={{ variant: "page.container" }}>
+    <div sx={{ variant: "page.container", px: [2, 0] }}>
       <div
         sx={{
           variant: "page.hero",
@@ -94,10 +96,11 @@ function HomePageView({ page, posts, ...props }) {
 export default props => {
   const [_, page] = hasPrismicData(props, "page")
   const [, site] = hasGatsbyData(props, "site")
+
   return (
-    <Layout>
+    <>
       <SEO {...getPageSEOProps(site, page)} />
       <HomePageContainer {...props} data={props.data} />
-    </Layout>
+    </>
   )
 }
